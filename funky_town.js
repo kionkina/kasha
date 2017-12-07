@@ -15,27 +15,64 @@ var fibonacci = function(n){
 	return  fibonacci(n - 1) + fibonacci(n - 2);
     }};
 
-var gcd = function(a,b){
+var geecd = function(a,b){
     var c = Math.max(a,b);
     var d = Math.min(a,b);
     if(b == a){
 	return a;
     }
     else{
-	return gcd(d,c-d);
-}};
+	return gcd(d,c-d);}
+};
 
 
 var randomStudent = function(Lism){
     var rannum = Math.floor(Math.random() * Lism.length);
-    console.log(rannum);
+    //    console.log(rannum);
     return(Lism[rannum]);
 
 };
 
-console.log("fibonacci(15) . . .");
-console.log(fibonacci(15));
-console.log("gcd(28, 4) . . .");
-console.log(gcd(28,4));
-console.log('randomStudent(["Banana","Orange","Apple","Mango"]) . . .');
-console.log(randomStudent(["Banana","Orange","Apple","Mango"]));
+
+var buttonCallback = function(e) {
+    console.log("\n \nhere comes e ...");
+    console.log(e);
+    console.log("\n \nhere comes this ...");    
+    console.log(this);
+};
+
+var nameFxn = function(){
+    var boop = randomStudent(['Karina', 'Dasha', 'Adam', 'TMoi', 'Jawad', 'Taylor']);
+    console.log(boop);
+};
+
+
+var fibFxn = function(){
+    var eep = fibonacci(6);
+    console.log(eep);
+};
+
+var gcdFxn = function(){
+    var wat = geecd(28,4);
+    console.log(wat);
+};
+
+var b = document.getElementById('b');
+b.addEventListener('click', buttonCallback);
+
+var name = document.getElementById('getName');
+getName.addEventListener('click', nameFxn);
+
+var fib = document.getElementById('fib');
+fib.addEventListener('click', fibFxn);
+
+var gcd = document.getElementById('gcd');
+gcd.addEventListener('click', gcdFxn);
+
+
+//console.log("fibonacci(15) . . .");
+//console.log(fibonacci(15));
+//console.log("gcd(28, 4) . . .");
+//console.log(gcd(28,4));
+//console.log('randomStudent(["Banana","Orange","Apple","Mango"]) . . .');
+//console.log(randomStudent(["Banana","Orange","Apple","Mango"]));
