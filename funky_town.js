@@ -22,8 +22,8 @@ var geecd = function(a,b){
 	return a;
     }
     else{
-	return gcd(d,c-d);}
-};
+    return geecd(d,c-d);
+}};
 
 
 var randomStudent = function(Lism){
@@ -53,7 +53,7 @@ var fibFxn = function(){
 };
 
 var gcdFxn = function(){
-    var wat = geecd(28,4);
+    var wat = geecd(4,28);
     console.log(wat);
 };
 
